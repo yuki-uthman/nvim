@@ -1,4 +1,41 @@
 "=======================================================================
+" Keymappings 
+"=======================================================================
+
+" Fast saving
+nnoremap <M-s> :w!<cr>
+
+" Exit
+nnoremap <M-w> :q!<CR>
+
+" Source
+nnoremap <M-r> :so %<CR>
+
+" Start Command Prompt
+nnoremap <Space> :
+
+" Move window up/down
+nnoremap <C-K> <C-Y>
+nnoremap <C-J> <C-E>
+
+" Clear highlight
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+
+
+" Search and Replace
+nnoremap <leader>s :%s///g<left><left><left>
+xnoremap <leader>s :s///g<Left><Left><left>
+
+" Replace one at a time
+" cgn
+
+
+
+
+
+
+
+"=======================================================================
 " Vim-Plug Installs
 "=======================================================================
 
@@ -23,7 +60,7 @@ Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/sonokai'
-Plug 'https://github.com/joshdick/onedark.vim.git'
+Plug 'joshdick/onedark.vim'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -54,6 +91,8 @@ set timeoutlen=400
 set splitbelow
 set splitright
 set backspace=indent,eol,start
+set ignorecase
+set smartcase
 set hlsearch
 set incsearch
 set shortmess+=c
@@ -74,39 +113,6 @@ let mapleader = " "
 
 
 
-
-"=======================================================================
-" Keymappings 
-"=======================================================================
-
-" Fast saving
-nnoremap <leader>w :w!<cr>
-
-" Exit
-" nnoremap <M-w> :q!<CR>
-
-" Start Command Prompt
-nnoremap <Space> :
-
-" Move window up/down
-nnoremap <C-K> <C-Y>
-nnoremap <C-J> <C-E>
-
-" Clear highlight
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-
-
-" Search and Replace
-nnoremap <leader>s :%s///g<left><left><left>
-xnoremap <leader>s :s///g<Left><Left><left>
-
-" Replace one at a time
-" cgn
-
-
-
-
-
 "=======================================================================
 " Plugins settings
 "======================================================================
@@ -115,8 +121,7 @@ xnoremap <leader>s :s///g<Left><Left><left>
  colorscheme onedark
 
 " Commentary
-nnoremap <silent> <leader>/ :Commentary<CR>
-
+nnoremap <silent> <M-/> :Commentary<CR>
 
 " Completor
 " use tab to autocomplete
@@ -140,6 +145,11 @@ let g:airline_section_z = '%{strftime("%a %d %b %H:%M")}'
 
 " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
+
+
+
+
+
 
 
 
