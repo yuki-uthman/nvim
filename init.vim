@@ -16,14 +16,17 @@ Plug 'machakann/vim-highlightedyank'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" Nerdtree
+Plug 'preservim/nerdtree'
+
 " Colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/sonokai'
 Plug 'https://github.com/joshdick/onedark.vim.git'
 
-" Nerdtree
-Plug 'preservim/nerdtree'
+" Airline
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -63,19 +66,6 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
-
-" Change cursor shape between insert and normal mode in iTerm2.app
-if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-endif
-
-" Mode Settings Terminal
-if $TERM_PROGRAM =~ "Terminal"
-  let &t_SI.="\e[5 q" "SI = INSERT mode
-  let &t_SR.="\e[4 q" "SR = REPLACE mode
-  let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-endif
 
 let mapleader = " "
   
@@ -138,7 +128,18 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 nnoremap <silent> \ :NERDTreeToggle<CR>
 
 
+" Airline
+let g:airline_inactive_collapse=1
+let g:airline#extensions#taboo#enabled = 1
+let g:airline_section_c = '%t'
 
+" remove the filetype part
+let g:airline_section_x=''
+let g:airline_section_y=''
+let g:airline_section_z = '%{strftime("%a %d %b %H:%M")}'
+
+" remove separators for empty sections
+let g:airline_skip_empty_sections = 1
 
 
 
