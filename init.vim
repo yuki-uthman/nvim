@@ -1,8 +1,8 @@
 "=======================================================================
-" Keymappings 
+" Basics 
 "=======================================================================
 
-" Fast saving
+" Saving
 nnoremap <M-s> :w!<cr>
 
 " Exit
@@ -14,13 +14,52 @@ nnoremap <M-r> :so %<CR>
 " Start Command Prompt
 nnoremap <Space> :
 
+
+
+
+
+
+
+
+
+
+
+
+
+"=======================================================================
+" Window
+"=======================================================================
+
 " Move window up/down
 nnoremap <C-K> <C-Y>
 nnoremap <C-J> <C-E>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"=======================================================================
+" Search & Replace
+"=======================================================================
+
 " Clear highlight
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
-
 
 " Search and Replace
 nnoremap <leader>s :%s///g<left><left><left>
@@ -28,6 +67,14 @@ xnoremap <leader>s :s///g<Left><Left><left>
 
 " Replace one at a time
 " cgn
+
+
+
+
+
+
+
+
 
 
 
@@ -66,6 +113,30 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "=======================================================================
 " General Settings 
@@ -113,6 +184,16 @@ let mapleader = " "
 
 
 
+
+
+
+
+
+
+
+
+
+
 "=======================================================================
 " Plugins settings
 "======================================================================
@@ -131,7 +212,6 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 " Nerdtree
 nnoremap <silent> \ :NERDTreeToggle<CR>
-
 
 " Airline
 let g:airline_inactive_collapse=1
